@@ -9,11 +9,10 @@ import Foundation
 
 struct Result: Codable {
     let date: String
-    var score: Int
+    var score: Int = 0
+    var percent: Int = 0
     
-    init(score: Int) {
-        self.score = score
-        
+    init() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.dateFormat = "MMM d, hh:mm:ss"

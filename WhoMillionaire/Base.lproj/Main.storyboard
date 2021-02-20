@@ -17,19 +17,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="4kY-ym-bm1">
-                                <rect key="frame" x="32" y="252" width="350" height="392"/>
+                                <rect key="frame" x="32" y="231" width="350" height="434"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CAy-KM-6K8">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="125"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="166.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто хочет стать" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJl-iP-NVu">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="79.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="121"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                 <color key="textColor" systemColor="systemYellowColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="миллионером" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JAu-SO-ZSK">
-                                                <rect key="frame" x="0.0" y="79.5" width="350" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="121" width="350" height="45.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                                 <color key="textColor" systemColor="systemYellowColor"/>
@@ -38,7 +38,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1l6-5Z-etZ">
-                                        <rect key="frame" x="0.0" y="225" width="350" height="167"/>
+                                        <rect key="frame" x="0.0" y="266.5" width="350" height="167.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBp-4H-fnp">
                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="48"/>
@@ -68,7 +68,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очки" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClB-VZ-2R5">
-                                                <rect key="frame" x="0.0" y="128" width="350" height="39"/>
+                                                <rect key="frame" x="0.0" y="128" width="350" height="39.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemYellowColor"/>
                                                 <nil key="highlightedColor"/>
@@ -121,13 +121,19 @@
                                             <rect key="frame" x="20" y="11" width="374" height="21"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxK-Rm-zPv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="187" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="124.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eID-hK-oha">
-                                                    <rect key="frame" x="187" y="0.0" width="187" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Очки" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eID-hK-oha">
+                                                    <rect key="frame" x="124.5" y="0.0" width="125" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ue-8H-hno">
+                                                    <rect key="frame" x="249.5" y="0.0" width="124.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -145,6 +151,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="nxK-Rm-zPv" id="PGh-xh-wWj"/>
+                                    <outlet property="percentLabel" destination="8ue-8H-hno" id="eFO-dd-nxr"/>
                                     <outlet property="scoreLabel" destination="eID-hK-oha" id="c2d-Nr-zCs"/>
                                 </connections>
                             </tableViewCell>
@@ -254,9 +261,16 @@
                             <constraint firstItem="ApE-Mc-y3n" firstAttribute="bottom" secondItem="Irm-Yq-w2q" secondAttribute="bottom" id="xvP-ct-s6V"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hBf-nJ-MW9"/>
+                    <navigationItem key="navigationItem" id="hBf-nJ-MW9">
+                        <barButtonItem key="rightBarButtonItem" title="$0" id="10p-Le-mUM">
+                            <connections>
+                                <action selector="saveMoneyAction:" destination="ePS-fC-VIs" id="7lz-yM-UuP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="questionLabel" destination="s29-vB-2Ir" id="0go-YM-Aar"/>
+                        <outlet property="scoreBarBurron" destination="10p-Le-mUM" id="D9y-7N-C1h"/>
                         <outletCollection property="answerButtons" destination="Caw-nV-ru3" collectionClass="NSMutableArray" id="arb-Ya-phq"/>
                         <outletCollection property="answerButtons" destination="rKi-zM-RCf" collectionClass="NSMutableArray" id="ib9-td-Fhg"/>
                         <outletCollection property="answerButtons" destination="ZUM-36-aj4" collectionClass="NSMutableArray" id="MOQ-CJ-bnV"/>

@@ -17,7 +17,7 @@ class GameSession {
     
     weak var delegate: GameSessionDelegate!
     
-    var result = Result(score: 0)
+    var result = Result()
     var factor = 100
     let questionsCount: Int
     var questionsTrue: Int = 0 {
@@ -53,6 +53,7 @@ extension GameSession: GameViewControllerDelegate {
     }
     
     func endGame() {
+        result.percent = Int((( Double(questionsTrue) / Double(questionsCount) ) * 100).rounded(.down))
         Game.shared.addResult(result: result)
         delegate.endGame(with: result)
         print(result)

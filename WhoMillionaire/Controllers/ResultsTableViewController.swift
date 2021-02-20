@@ -39,7 +39,7 @@ class ResultsTableViewController: UITableViewController {
         let result = results[indexPath.row]
         cell.dateLabel.text = result.date
         cell.scoreLabel.text = "$" + String(result.score)
-        
+        cell.percentLabel.text = String(result.percent) + "%"
         return cell
     }
 

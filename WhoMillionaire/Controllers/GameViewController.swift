@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet var answerButtons: [UIButton]!
+    @IBOutlet weak var scoreBarBurron: UIBarButtonItem!
     
     var index = 0
 
@@ -65,6 +66,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    
     //MARK: - Action
     
     @IBAction func selectAnswer(_ sender: UIButton) {
@@ -72,22 +74,19 @@ class GameViewController: UIViewController {
               let check = gameSession.questions[index].answers[answer]
         else { return }
         
-        switch check {
-        case true:
-            print("Верно")
-        case false:
-            //sender.isEnabled = false
-            print("Не верно")
-        }
-        
-        delegate.progress(for: index, with: check)
-        
         if (index + 1) < gameSession.questions.count, check {
             index += 1
             loadQuestion()
+            delegate.progress(for: index, with: check)
+            scoreBarBurron.title = "$" + String(gameSession.result.score)
         } else {
             delegate.endGame()
             navigationController?.popViewController(animated: true)
         }
+    }
+    
+    @IBAction func saveMoneyAction(_ sender: UIBarButtonItem) {
+        delegate.endGame()
+        navigationController?.popViewController(animated: true)
     }
 }

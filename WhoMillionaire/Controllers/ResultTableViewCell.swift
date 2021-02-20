@@ -11,6 +11,7 @@ class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var percentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
