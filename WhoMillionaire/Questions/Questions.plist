@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>На каком инструменте, как считается, играл древнерусский певец и сказитель Боян?</key>
+	<dict>
+		<key>На гуслях</key>
+		<true/>
+		<key>На виолончели</key>
+		<false/>
+		<key>На баяне</key>
+		<false/>
+		<key>На гитаре</key>
+		<false/>
+	</dict>
+	<key>В какой из этих стран один из официальных языков - французский?</key>
+	<dict>
+		<key>Кения</key>
+		<false/>
+		<key>Эквадор</key>
+		<false/>
+		<key>Республика Гаити</key>
+		<true/>
+		<key>Венесуэла</key>
+		<false/>
+	</dict>
+	<key>В каком из этих фильмов не снимался Александр Абдулов?</key>
+	<dict>
+		<key>Карнавал</key>
+		<false/>
+		<key>Чародеи</key>
+		<false/>
+		<key>Убить дракона</key>
+		<false/>
+		<key>Московские каникулы</key>
+		<true/>
+	</dict>
+	<key>В каком году произошла Куликовская битва?</key>
+	<dict>
+		<key>1380</key>
+		<true/>
+		<key>1569</key>
+		<false/>
+		<key>1616</key>
+		<false/>
+		<key>1773</key>
+		<false/>
+	</dict>
+	<key>Кто автор музыки к детской песенке Чунга-Чанга?</key>
+	<dict>
+		<key>Зацепин</key>
+		<false/>
+		<key>Шаинский</key>
+		<true/>
+		<key>Дербенёв</key>
+		<false/>
+		<key>Шпиц</key>
+		<false/>
+	</dict>
+	<key>Какая картина Малевича находится в Русском музее?</key>
+	<dict>
+		<key>Точильщик</key>
+		<false/>
+		<key>Чёрный квадрат</key>
+		<false/>
+		<key>Белый квадрат</key>
+		<false/>
+		<key>Красный квадрат</key>
+		<true/>
+	</dict>
+	<key>Шкала Сковилла - это шкала оценки...</key>
+	<dict>
+		<key>Привлекательности женщин</key>
+		<false/>
+		<key>Остроты перца</key>
+		<true/>
+		<key>Качества атмосферного воздуха</key>
+		<false/>
+		<key>Уровня моря</key>
+		<false/>
+	</dict>
+	<key>Какой титул имел Дон Кихот?</key>
+	<dict>
+		<key>Идальго</key>
+		<true/>
+		<key>Барон</key>
+		<false/>
+		<key>Вождь</key>
+		<false/>
+		<key>Маркиз</key>
+		<false/>
+	</dict>
+	<key>Кто автор антиутопического романа &quot;О дивный новый мир&quot;?</key>
+	<dict>
+		<key>Сомерсет Моэм</key>
+		<false/>
+		<key>Джордж Оруэлл</key>
+		<false/>
+		<key>Рэй Брэдбери</key>
+		<false/>
+		<key>Олдос Хаксли</key>
+		<true/>
+	</dict>
+	<key>Как называется самая глубокая точка поверхности Земли, находящаяся на дне Марианской впадины?</key>
+	<dict>
+		<key>Кермадек</key>
+		<false/>
+		<key>Филиппинская плита</key>
+		<false/>
+		<key>Бездна Челленджера</key>
+		<true/>
+		<key>Черное Логово</key>
+		<false/>
+	</dict>
+</dict>
+</plist>
