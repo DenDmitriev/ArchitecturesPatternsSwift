@@ -16,6 +16,7 @@ struct Result: Codable {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "MMM d, hh:mm:ss"
         self.date = dateFormatter.string(from: Date())
     }
 }
