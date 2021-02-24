@@ -17,21 +17,17 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        style()
         load()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        style()
+        navigationController?.navigationBar.isHidden = true
     }
     
     func load() {
         Game.shared.delegate = self
-        if let lastResult = Game.shared.results.last {
-            scoreLabel.text = "Последний результат\n" +
-                " \(lastResult.date)\n" +
-                "$" + String(lastResult.score)
-        }
     }
     
     private func style() {
@@ -51,8 +47,9 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch  segue.identifier {
         case resultsGameSegueIdentifier:
-            let table = segue.destination as! ResultsTableViewController
-            table.results = Game.shared.results
+            print(#function + " go to results table")
+        case startGameSegueIdentifier:
+            print(#function + " go to game controller")
         default:
             return
         }

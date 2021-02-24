@@ -43,6 +43,7 @@ class Game {
 
 extension Game: GameSessionDelegate {
     func endGame(with: Result) {
+        gameSession = nil
         delegate.endGame(with: with.score)
     }
     

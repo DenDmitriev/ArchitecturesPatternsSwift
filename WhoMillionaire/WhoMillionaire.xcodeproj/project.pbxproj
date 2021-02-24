@@ -11,8 +11,8 @@
 		95A3266F25E1282600E909D5 /* Caretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3266E25E1282600E909D5 /* Caretaker.swift */; };
 		95A3267525E128BE00E909D5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3267425E128BE00E909D5 /* Result.swift */; };
 		95A3267925E13E9000E909D5 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3267825E13E9000E909D5 /* ResultTableViewCell.swift */; };
-		95AD2B7525E1028C006F213D /* Questions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95AD2B7425E1028C006F213D /* Questions.plist */; };
 		95AD2B7825E10940006F213D /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AD2B7725E10940006F213D /* QuestionService.swift */; };
+		95B2B00025E6269C003765CF /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 95B2AFFF25E6269C003765CF /* Questions.json */; };
 		95B96F5525E0F2DA00641B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B96F5425E0F2DA00641B15 /* AppDelegate.swift */; };
 		95B96F5725E0F2DA00641B15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B96F5625E0F2DA00641B15 /* SceneDelegate.swift */; };
 		95B96F5925E0F2DA00641B15 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B96F5825E0F2DA00641B15 /* MainViewController.swift */; };
@@ -31,8 +31,8 @@
 		95A3266E25E1282600E909D5 /* Caretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caretaker.swift; sourceTree = "<group>"; };
 		95A3267425E128BE00E909D5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		95A3267825E13E9000E909D5 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
-		95AD2B7425E1028C006F213D /* Questions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Questions.plist; sourceTree = "<group>"; };
 		95AD2B7725E10940006F213D /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		95B2AFFF25E6269C003765CF /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
 		95B96F5125E0F2DA00641B15 /* WhoMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B96F5425E0F2DA00641B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B96F5625E0F2DA00641B15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			children = (
 				95B96F8425E0FFAC00641B15 /* Question.swift */,
 				95AD2B7725E10940006F213D /* QuestionService.swift */,
-				95AD2B7425E1028C006F213D /* Questions.plist */,
+				95B2AFFF25E6269C003765CF /* Questions.json */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AD2B7525E1028C006F213D /* Questions.plist in Resources */,
+				95B2B00025E6269C003765CF /* Questions.json in Resources */,
 				95B96F6125E0F2DD00641B15 /* LaunchScreen.storyboard in Resources */,
 				95B96F5E25E0F2DD00641B15 /* Assets.xcassets in Resources */,
 				95B96F5C25E0F2DA00641B15 /* Main.storyboard in Resources */,

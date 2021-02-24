@@ -13,13 +13,14 @@ protocol GameSessionDelegate: AnyObject {
 
 class GameSession {
     
-    var questions: [Question]!
+    var questions: [Question] = []
     
     weak var delegate: GameSessionDelegate!
     
-    var result = Result(score: 0)
+    var result = Result()
+    
+    var questionsCount: Int { questions.count }
     var factor = 100
-    let questionsCount: Int
     var questionsTrue: Int = 0 {
         willSet {
             factor *= newValue
@@ -27,18 +28,10 @@ class GameSession {
     }
     
     init() {
-        guard let questionsFromService = QuestionService.shared.questions else {
-            self.questions = []
-            self.questionsCount = 0
-            return
-        }
-        self.questions = questionsFromService
-        self.questionsCount = questionsFromService.count
+        guard let questions = QuestionService.shared.questions() else { return }
+        self.questions = questions
         delegate = Game.shared
     }
-    
-    
-    
 }
 
 extension GameSession: GameViewControllerDelegate {
@@ -53,6 +46,7 @@ extension GameSession: GameViewControllerDelegate {
     }
     
     func endGame() {
+        result.percent = Int((( Double(questionsTrue) / Double(questionsCount) ) * 100).rounded(.down))
         Game.shared.addResult(result: result)
         delegate.endGame(with: result)
         print(result)

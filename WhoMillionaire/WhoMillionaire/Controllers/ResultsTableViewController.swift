@@ -8,20 +8,15 @@
 import UIKit
 
 class ResultsTableViewController: UITableViewController {
-    
-    let cellIdentifier = "result"
-    
-    var results: [Result]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationController?.navigationBar.isHidden = false
     }
 
     @IBAction func clearResultsAction(_ sender: UIBarButtonItem) {
         Game.shared.clearResults()
-        results.removeAll()
         tableView.reloadData()
     }
     
@@ -29,18 +24,17 @@ class ResultsTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return results.count
+        return Game.shared.results.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as! ResultTableViewCell
         
-        let result = results[indexPath.row]
+        let result = Game.shared.results[indexPath.row]
         cell.dateLabel.text = result.date
         cell.scoreLabel.text = "$" + String(result.score)
+        cell.percentLabel.text = String(result.percent) + "%"
         
         return cell
     }
-
 }
