@@ -1,0 +1,212 @@
+[
+    {
+        "question": "Что народная мудрость советует отдать врагу?",
+        "answers": [
+            {
+                "answer": "ужин",
+                "right": true
+            },
+            {
+                "answer": "обед",
+                "right": false
+            },
+            {
+                "answer": "полдник",
+                "right": false
+            },
+            {
+                "answer": "завтрак",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "Чему в Туле установлен памятник?",
+        "answers": [
+            {
+                "answer": "прянику",
+                "right": true
+            },
+            {
+                "answer": "хлебу",
+                "right": false
+            },
+            {
+                "answer": "кексу",
+                "right": false
+            },
+            {
+                "answer": "бублику",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "Чего не ела героиня сказки “Гуси-лебеди”, когда спасалась с братцем от погони?",
+        "answers": [
+            {
+                "answer": "фуа-гра",
+                "right": true
+            },
+            {
+                "answer": "пирожок",
+                "right": false
+            },
+            {
+                "answer": "кисель",
+                "right": false
+            },
+            {
+                "answer": "яблоко",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "Что обычно едят горячим?",
+        "answers": [
+            {
+                "answer": "рассольник",
+                "right": true
+            },
+            {
+                "answer": "окрошку",
+                "right": false
+            },
+            {
+                "answer": "гаспачо",
+                "right": false
+            },
+            {
+                "answer": "свекольник",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "Что Китай недавно объявил своим национальным достоянием, вызвав возмущение граждан Южной Кореи?",
+        "answers": [
+            {
+                "answer": "кимчи",
+                "right": true
+            },
+            {
+                "answer": "онигири",
+                "right": false
+            },
+            {
+                "answer": "ушу",
+                "right": false
+            },
+            {
+                "answer": "группу “BTS”",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "Какой ингредиент знаменитой пиццы “Маргарита” не символизирует ни один из цветов флага Италии?",
+        "answers": [
+            {
+                "answer": "оливковое масло",
+                "right": true
+            },
+            {
+                "answer": "томаты",
+                "right": false
+            },
+            {
+                "answer": "моцарелла",
+                "right": false
+            },
+            {
+                "answer": "базилик",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "В блюде немецкой кухни “Небо и земля” картофель – это земля. А что символизирует небеса?",
+        "answers": [
+            {
+                "answer": "яблоки",
+                "right": true
+            },
+            {
+                "answer": "грибы",
+                "right": false
+            },
+            {
+                "answer": "петрушка",
+                "right": false
+            },
+            {
+                "answer": "клубника",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "Какое блюдо создал французский повар Андре Дюпон, состоявший на службе у русского графа?",
+        "answers": [
+            {
+                "answer": "бефстроганов",
+                "right": true
+            },
+            {
+                "answer": "цыпленок табака",
+                "right": false
+            },
+            {
+                "answer": "шницель по-венски",
+                "right": false
+            },
+            {
+                "answer": "ростбиф",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "Неправильное написание какого слова объясняется тем, что мода на блюдо пришла не из Японии, а из Европы?",
+        "answers": [
+            {
+                "answer": "суши",
+                "right": true
+            },
+            {
+                "answer": "тэмпура",
+                "right": false
+            },
+            {
+                "answer": "рамэн",
+                "right": false
+            },
+            {
+                "answer": "гедза",
+                "right": false
+            }
+        ]
+    },
+    {
+        "question": "Что стало популярным благодаря “Ресторану трех корон”, обслуживавшему посетителей Всемирной выставки 1939 года?",
+        "answers": [
+            {
+                "answer": "шведский стол",
+                "right": true
+            },
+            {
+                "answer": "коктейли",
+                "right": false
+            },
+            {
+                "answer": "фастфуд",
+                "right": false
+            },
+            {
+                "answer": "еда на вынос",
+                "right": false
+            }
+        ]
+    }
+]
