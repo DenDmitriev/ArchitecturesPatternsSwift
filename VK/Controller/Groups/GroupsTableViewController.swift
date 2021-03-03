@@ -33,10 +33,19 @@ class GroupsTableViewController: UITableViewController {
     
     @objc func load() {
         print(#function)
-        groupAdapter.getGroups() { [weak self] (groups) in
-            self?.groups = groups
-            self?.tableView.reloadData()
-            self?.refreshControl?.endRefreshing()
+        groupAdapter.getGroups() { [weak self] (groups, deleted, inserted, modificated) in
+            if deleted.isEmpty, inserted.isEmpty, modificated.isEmpty {
+                self?.groups = groups
+                self?.tableView.reloadData()
+                self?.refreshControl?.endRefreshing()
+            } else {
+                self?.tableView.beginUpdates()
+                self?.tableView.reloadRows(at: modificated.map { IndexPath(row: $0, section: 0) }, with: .automatic)
+                self?.tableView.insertRows(at: inserted.map { IndexPath(row: $0, section: 0) }, with: .automatic)
+                self?.tableView.deleteRows(at: deleted.map { IndexPath(row: $0, section: 0) }, with: .automatic)
+                self?.tableView.endUpdates()
+            }
+            
         }
     }
     //MARK: - FilterGroups

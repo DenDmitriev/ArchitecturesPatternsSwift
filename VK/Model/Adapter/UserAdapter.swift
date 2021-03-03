@@ -6,11 +6,11 @@
 //  Copyright © 2021 Denis Dmitriev. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RealmSwift
 
 protocol UserAdapterProtocol {
-    func getUsers(completion: @escaping (([User]) -> Void) )
+    func getUsers(completion: @escaping ((_ users: [User], _ deleted: [Int], _ inserted: [Int], _ modificated: [Int]) -> Void) )
 }
 
 class UserAdapter: UserAdapterProtocol {
@@ -18,7 +18,7 @@ class UserAdapter: UserAdapterProtocol {
     let service = VKService()
     var notificationToken: NotificationToken?
     
-    func getUsers(completion: @escaping (([User]) -> Void)) {
+    func getUsers(completion: @escaping ((_ users: [User], _ deleted: [Int], _ inserted: [Int], _ modificated: [Int]) -> Void)) {
         
         guard let realm = try? Realm() else { return }
         
@@ -28,16 +28,16 @@ class UserAdapter: UserAdapterProtocol {
             guard let self = self else { return }
             
             switch changes {
-            case .update(let usersRealm, _, _, _):
+            case .update(let usersRealm, let deleted, let inserted, let modificated):
                 let users = usersRealm
                     .map { self.getUser(from: $0) }
                     .sorted { $0.name > $1.name }
-                completion(users)
+                completion(users, deleted, inserted, modificated)
             case .initial(let usersRealm):
                 let users = usersRealm
                     .map { self.getUser(from: $0) }
                     .sorted { $0.name > $1.name }
-                completion(users)
+                completion(users, [], [], [])
             case .error(let error):
                 print(error.localizedDescription)
             }

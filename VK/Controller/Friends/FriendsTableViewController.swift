@@ -39,14 +39,14 @@ class FriendsTableViewController: UITableViewController {
     
     @objc func load() {
         print(#function)
-        userAdapter.getUsers { [weak self] (users) in
+        userAdapter.getUsers { [weak self] (users, _, _, _) in
             self?.friends = users
             self?.tableView.reloadData()
             self?.refreshControl?.endRefreshing()
         }
     }
     
-    //MARK: - FilterUsers
+    //MARK: - Filter Users
     
     lazy var friends: [User] = [] {
         didSet {

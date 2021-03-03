@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 protocol GroupAdapterProtocol {
-    func getGroups(completion: @escaping (([Group]) -> Void) )
+    func getGroups(completion: @escaping ((_ groups: [Group], _ deleted: [Int], _ inserted: [Int], _ modificated: [Int]) -> Void) )
 }
 
 class GroupAdapter: GroupAdapterProtocol {
@@ -18,7 +18,7 @@ class GroupAdapter: GroupAdapterProtocol {
     let service = VKService()
     var notificationToken: NotificationToken?
     
-    func getGroups(completion: @escaping (([Group]) -> Void)) {
+    func getGroups(completion: @escaping ((_ groups: [Group], _ deleted: [Int], _ inserted: [Int], _ modificated: [Int]) -> Void)) {
         
         guard let realm = try? Realm() else { return }
         
@@ -28,16 +28,16 @@ class GroupAdapter: GroupAdapterProtocol {
             guard let self = self else { return }
             
             switch changes {
-            case .update(let groupsRealm, _, _, _):
+            case .update(let groupsRealm, let deleted, let inserted, let modificated):
                 let groups = groupsRealm
                     .map { self.getGroup(from: $0) }
                     .sorted { $0.title > $1.title }
-                completion(groups)
+                completion(groups, deleted, inserted, modificated)
             case .initial(let groupsRealm):
                 let groups = groupsRealm
                     .map { self.getGroup(from: $0) }
                     .sorted { $0.title > $1.title }
-                completion(groups)
+                completion(groups, [], [], [])
             case .error(let error):
                 print(error.localizedDescription)
             }
