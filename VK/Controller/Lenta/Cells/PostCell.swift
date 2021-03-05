@@ -11,7 +11,6 @@ import UIKit
 typealias PostCell = UITableViewCell & PostSet
 
 protocol PostSet: class {
-    
-    func set(post: Post)
+    func configure(with viewModel: LentaModel?)
 }
 

@@ -34,12 +34,16 @@ class TextTableViewCell: UITableViewCell, PostSet {
     
     //MARK: - Setup
     
-    func set(post: Post) {
-        postTextView.text = post.text
-        
+    func configure(with viewModel: LentaModel?) {
+        guard let textModel = viewModel as? LentaTextModel else { return }
+        postTextView.text = textModel.text
+        setupShow(textModel)
+    }
+    
+    fileprivate func setupShow(_ viewModel: LentaTextModel) {
         let textHeight = postTextView.calculateViewHeightWithCurrentWidth()
         showMoreView.isHidden = ((textHeight - PostSize.text) / PostSize.text < 1) ? true : false
-        post.textMode == .short ? showMoreButton.setTitle("Показать...", for: .normal) : showMoreButton.setTitle("Скрыть", for: .normal)
+        viewModel.textMode == .short ? showMoreButton.setTitle("Показать...", for: .normal) : showMoreButton.setTitle("Скрыть", for: .normal)
     }
     
     private func reset() {

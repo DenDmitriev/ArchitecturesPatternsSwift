@@ -57,6 +57,24 @@
 		9599AB3B24BD7C5400DF9D5B /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9599AB3A24BD7C5400DF9D5B /* Animation.swift */; };
 		9599AB3D24BD7C9C00DF9D5B /* CGRectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9599AB3C24BD7C9C00DF9D5B /* CGRectExt.swift */; };
 		9599AB4024BED87000DF9D5B /* PhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9599AB3F24BED87000DF9D5B /* PhotosViewController.xib */; };
+		95A420BC25F0A824002A95CA /* LentaHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420BB25F0A824002A95CA /* LentaHeaderModel.swift */; };
+		95A420BF25F0A837002A95CA /* LentaHeaderModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420BE25F0A837002A95CA /* LentaHeaderModelFactory.swift */; };
+		95A420C225F0B7D2002A95CA /* LentaModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420C125F0B7D2002A95CA /* LentaModelFactory.swift */; };
+		95A420C625F0B94C002A95CA /* LentaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420C525F0B94C002A95CA /* LentaModel.swift */; };
+		95A420CC25F0BC6E002A95CA /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420CB25F0BC6E002A95CA /* FriendsViewModel.swift */; };
+		95A420D025F0BCAE002A95CA /* FriendsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420CF25F0BCAE002A95CA /* FriendsViewModelFactory.swift */; };
+		95A420D325F0C601002A95CA /* FilterUserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420D225F0C601002A95CA /* FilterUserAdapter.swift */; };
+		95A420DA25F20258002A95CA /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420D925F20258002A95CA /* GroupViewModel.swift */; };
+		95A420DD25F20262002A95CA /* GroupsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420DC25F20262002A95CA /* GroupsViewModelFactory.swift */; };
+		95A420E125F205B7002A95CA /* FilterGroupsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420E025F205B7002A95CA /* FilterGroupsAdapter.swift */; };
+		95A420E525F21529002A95CA /* LentaTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420E425F21529002A95CA /* LentaTextModel.swift */; };
+		95A420E925F216F4002A95CA /* LentaTextModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420E825F216F4002A95CA /* LentaTextModelFactory.swift */; };
+		95A420EC25F21B29002A95CA /* LentaPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420EB25F21B29002A95CA /* LentaPhotoModel.swift */; };
+		95A420EF25F21B37002A95CA /* LentaPhotoModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420EE25F21B37002A95CA /* LentaPhotoModelFactory.swift */; };
+		95A420F425F21E0E002A95CA /* LentaFooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420F325F21E0E002A95CA /* LentaFooterModel.swift */; };
+		95A420F725F21E17002A95CA /* LentaFooterModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420F625F21E17002A95CA /* LentaFooterModelFactory.swift */; };
+		95A420FB25F223B8002A95CA /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420FA25F223B8002A95CA /* PostModel.swift */; };
+		95A420FF25F224C9002A95CA /* PostsModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A420FE25F224C9002A95CA /* PostsModelsFactory.swift */; };
 		95A70DF124D6A414000F8A95 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A70DF024D6A414000F8A95 /* Response.swift */; };
 		95B24C0025CD30F4009EA000 /* Gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95B24BFF25CD30F4009EA000 /* Gallery.storyboard */; };
 		95B24C0325CD317D009EA000 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B24C0225CD317D009EA000 /* GalleryCollectionViewController.swift */; };
@@ -81,7 +99,6 @@
 		95DB2D8125D1A8C7000FD046 /* AlbumNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB2D8025D1A8C7000FD046 /* AlbumNode.swift */; };
 		95DB2D8925D2614C000FD046 /* AsyncGalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB2D8825D2614C000FD046 /* AsyncGalleryController.swift */; };
 		95DB2D8C25D26724000FD046 /* GalleryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB2D8B25D26724000FD046 /* GalleryNode.swift */; };
-		95F2062E25C2C2ED003470EB /* SubscrubeFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2062D25C2C2ED003470EB /* SubscrubeFacade.swift */; };
 		95F2063325C2C639003470EB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 95F2063225C2C639003470EB /* Realm */; };
 		95F2063525C2C639003470EB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95F2063425C2C639003470EB /* RealmSwift */; };
 /* End PBXBuildFile section */
@@ -138,6 +155,24 @@
 		9599AB3A24BD7C5400DF9D5B /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		9599AB3C24BD7C9C00DF9D5B /* CGRectExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExt.swift; sourceTree = "<group>"; };
 		9599AB3F24BED87000DF9D5B /* PhotosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosViewController.xib; sourceTree = "<group>"; };
+		95A420BB25F0A824002A95CA /* LentaHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaHeaderModel.swift; sourceTree = "<group>"; };
+		95A420BE25F0A837002A95CA /* LentaHeaderModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaHeaderModelFactory.swift; sourceTree = "<group>"; };
+		95A420C125F0B7D2002A95CA /* LentaModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaModelFactory.swift; sourceTree = "<group>"; };
+		95A420C525F0B94C002A95CA /* LentaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaModel.swift; sourceTree = "<group>"; };
+		95A420CB25F0BC6E002A95CA /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		95A420CF25F0BCAE002A95CA /* FriendsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModelFactory.swift; sourceTree = "<group>"; };
+		95A420D225F0C601002A95CA /* FilterUserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterUserAdapter.swift; sourceTree = "<group>"; };
+		95A420D925F20258002A95CA /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		95A420DC25F20262002A95CA /* GroupsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModelFactory.swift; sourceTree = "<group>"; };
+		95A420E025F205B7002A95CA /* FilterGroupsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterGroupsAdapter.swift; sourceTree = "<group>"; };
+		95A420E425F21529002A95CA /* LentaTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaTextModel.swift; sourceTree = "<group>"; };
+		95A420E825F216F4002A95CA /* LentaTextModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaTextModelFactory.swift; sourceTree = "<group>"; };
+		95A420EB25F21B29002A95CA /* LentaPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaPhotoModel.swift; sourceTree = "<group>"; };
+		95A420EE25F21B37002A95CA /* LentaPhotoModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaPhotoModelFactory.swift; sourceTree = "<group>"; };
+		95A420F325F21E0E002A95CA /* LentaFooterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaFooterModel.swift; sourceTree = "<group>"; };
+		95A420F625F21E17002A95CA /* LentaFooterModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentaFooterModelFactory.swift; sourceTree = "<group>"; };
+		95A420FA25F223B8002A95CA /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		95A420FE25F224C9002A95CA /* PostsModelsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModelsFactory.swift; sourceTree = "<group>"; };
 		95A70DF024D6A414000F8A95 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		95B24BFF25CD30F4009EA000 /* Gallery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gallery.storyboard; sourceTree = "<group>"; };
 		95B24C0225CD317D009EA000 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +197,6 @@
 		95DB2D8025D1A8C7000FD046 /* AlbumNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumNode.swift; sourceTree = "<group>"; };
 		95DB2D8825D2614C000FD046 /* AsyncGalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncGalleryController.swift; sourceTree = "<group>"; };
 		95DB2D8B25D26724000FD046 /* GalleryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryNode.swift; sourceTree = "<group>"; };
-		95F2062D25C2C2ED003470EB /* SubscrubeFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscrubeFacade.swift; sourceTree = "<group>"; };
 		B0E09F767DD73A7974EB40D0 /* Pods_VK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -313,13 +347,13 @@
 		95939D5324935ACD0026C1C7 /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				95D4359A25EE11A700139BD2 /* Flyweight */,
+				95A420B925F0A6F4002A95CA /* Factory */,
 				953DB07C25C2BA2700379423 /* App */,
 				95939D5F24935ACE0026C1C7 /* LaunchScreen.storyboard */,
 				95939D5A24935ACD0026C1C7 /* Main.storyboard */,
 				95B24BFF25CD30F4009EA000 /* Gallery.storyboard */,
 				95D435B725EE1B4600139BD2 /* Cache */,
-				95D435B225EE1A0C00139BD2 /* Facade */,
-				95D4359A25EE11A700139BD2 /* Flyweight */,
 				95939D6224935ACE0026C1C7 /* Info.plist */,
 				95776796249F50E300F12F34 /* Model */,
 				953DB07B25C2BA0900379423 /* View */,
@@ -340,6 +374,53 @@
 				9599AB3C24BD7C9C00DF9D5B /* CGRectExt.swift */,
 			);
 			path = Transitioning;
+			sourceTree = "<group>";
+		};
+		95A420B925F0A6F4002A95CA /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				95A420D825F20248002A95CA /* Groups */,
+				95A420CA25F0BC5C002A95CA /* Friends */,
+				95A420C925F0BC50002A95CA /* Lenta */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		95A420C925F0BC50002A95CA /* Lenta */ = {
+			isa = PBXGroup;
+			children = (
+				95A420FA25F223B8002A95CA /* PostModel.swift */,
+				95A420FE25F224C9002A95CA /* PostsModelsFactory.swift */,
+				95A420C525F0B94C002A95CA /* LentaModel.swift */,
+				95A420C125F0B7D2002A95CA /* LentaModelFactory.swift */,
+				95A420BB25F0A824002A95CA /* LentaHeaderModel.swift */,
+				95A420E425F21529002A95CA /* LentaTextModel.swift */,
+				95A420EB25F21B29002A95CA /* LentaPhotoModel.swift */,
+				95A420F325F21E0E002A95CA /* LentaFooterModel.swift */,
+				95A420BE25F0A837002A95CA /* LentaHeaderModelFactory.swift */,
+				95A420E825F216F4002A95CA /* LentaTextModelFactory.swift */,
+				95A420EE25F21B37002A95CA /* LentaPhotoModelFactory.swift */,
+				95A420F625F21E17002A95CA /* LentaFooterModelFactory.swift */,
+			);
+			path = Lenta;
+			sourceTree = "<group>";
+		};
+		95A420CA25F0BC5C002A95CA /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				95A420CB25F0BC6E002A95CA /* FriendsViewModel.swift */,
+				95A420CF25F0BCAE002A95CA /* FriendsViewModelFactory.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		95A420D825F20248002A95CA /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				95A420D925F20258002A95CA /* GroupViewModel.swift */,
+				95A420DC25F20262002A95CA /* GroupsViewModelFactory.swift */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 		95B9A2F324D203010032677A /* Frameworks */ = {
@@ -377,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				95776783249F4DCA00F12F34 /* FriendsTableViewController.swift */,
+				95A420D225F0C601002A95CA /* FilterUserAdapter.swift */,
 				95D435BD25EE1C0600139BD2 /* Cell */,
 			);
 			path = Friends;
@@ -396,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				9577678E249F4FD200F12F34 /* GroupsTableViewController.swift */,
+				95A420E025F205B7002A95CA /* FilterGroupsAdapter.swift */,
 				95776794249F50CC00F12F34 /* GlobalGroupsTableViewController.swift */,
 				95D435BB25EE1BF000139BD2 /* Cell */,
 			);
@@ -455,14 +538,6 @@
 				95D435AF25EE198200139BD2 /* PreviewPhoto */,
 			);
 			path = Photo;
-			sourceTree = "<group>";
-		};
-		95D435B225EE1A0C00139BD2 /* Facade */ = {
-			isa = PBXGroup;
-			children = (
-				95F2062D25C2C2ED003470EB /* SubscrubeFacade.swift */,
-			);
-			path = Facade;
 			sourceTree = "<group>";
 		};
 		95D435B725EE1B4600139BD2 /* Cache */ = {
@@ -667,10 +742,14 @@
 				9599AB3B24BD7C5400DF9D5B /* Animation.swift in Sources */,
 				95706A4F25AD811800340E20 /* FooterTableViewCell.swift in Sources */,
 				95939D5524935ACD0026C1C7 /* AppDelegate.swift in Sources */,
+				95A420D025F0BCAE002A95CA /* FriendsViewModelFactory.swift in Sources */,
 				95B24C2125D11279009EA000 /* AlbumCollectionViewCell.swift in Sources */,
+				95A420DA25F20258002A95CA /* GroupViewModel.swift in Sources */,
 				9557480124B8E96D002E4C8C /* Animator.swift in Sources */,
 				954A3B8624B10E9B00CC4698 /* LikeButton.swift in Sources */,
 				95D5C5C024ACEAF900738786 /* LentaTableViewController.swift in Sources */,
+				95A420FF25F224C9002A95CA /* PostsModelsFactory.swift in Sources */,
+				95A420EF25F21B37002A95CA /* LentaPhotoModelFactory.swift in Sources */,
 				95B9A2F224D202700032677A /* VKAuthViewController.swift in Sources */,
 				95DB2D6E25D1869F000FD046 /* AsyncAlbumController.swift in Sources */,
 				95DB2D8C25D26724000FD046 /* GalleryNode.swift in Sources */,
@@ -679,43 +758,56 @@
 				9517CB0725C87FE6003C4485 /* TextViewExtension.swift in Sources */,
 				956A1E8425EE290200F54327 /* RealmService.swift in Sources */,
 				956A8F4125ADC09200914D96 /* Photo.swift in Sources */,
+				95A420EC25F21B29002A95CA /* LentaPhotoModel.swift in Sources */,
 				955747FF24B8E89D002E4C8C /* TransitionDelegate.swift in Sources */,
 				9557480524BA3923002E4C8C /* CustomNavigationController.swift in Sources */,
 				95776795249F50CC00F12F34 /* GlobalGroupsTableViewController.swift in Sources */,
 				95B24C1925D10940009EA000 /* AlbumsCollectionViewController.swift in Sources */,
 				95B24C1425CD601B009EA000 /* UIImageExtension.swift in Sources */,
 				95D435D825EE256000139BD2 /* User.swift in Sources */,
+				95A420C625F0B94C002A95CA /* LentaModel.swift in Sources */,
 				95776784249F4DCA00F12F34 /* FriendsTableViewController.swift in Sources */,
 				956A1E9625EE3A5900F54327 /* GroupAdapter.swift in Sources */,
 				95B24C1D25D10E24009EA000 /* Album.swift in Sources */,
 				9583B29124B59F98007E3A92 /* PhotosViewController.swift in Sources */,
 				9513707425BFD7F400ADDE85 /* PhotoService.swift in Sources */,
+				95A420F425F21E0E002A95CA /* LentaFooterModel.swift in Sources */,
+				95A420C225F0B7D2002A95CA /* LentaModelFactory.swift in Sources */,
 				95776791249F4FDE00F12F34 /* GroupTableViewCell.swift in Sources */,
+				95A420F725F21E17002A95CA /* LentaFooterModelFactory.swift in Sources */,
 				95B9A2F824D2095D0032677A /* VKService.swift in Sources */,
+				95A420CC25F0BC6E002A95CA /* FriendsViewModel.swift in Sources */,
 				9599AB3D24BD7C9C00DF9D5B /* CGRectExt.swift in Sources */,
+				95A420D325F0C601002A95CA /* FilterUserAdapter.swift in Sources */,
 				95D435A025EE135A00139BD2 /* GallerySize.swift in Sources */,
 				9569267625C44B9A004ACC53 /* TableViewExtension.swift in Sources */,
-				95F2062E25C2C2ED003470EB /* SubscrubeFacade.swift in Sources */,
 				95776787249F4DEE00F12F34 /* FriendTableViewCell.swift in Sources */,
 				9567A14825C2DD2700EF4110 /* Format.swift in Sources */,
 				9577678F249F4FD200F12F34 /* GroupsTableViewController.swift in Sources */,
 				9517CB2D25C99EDD003C4485 /* PhotoTableViewCell.swift in Sources */,
+				95A420DD25F20262002A95CA /* GroupsViewModelFactory.swift in Sources */,
+				95A420E125F205B7002A95CA /* FilterGroupsAdapter.swift in Sources */,
 				9557480324BA33EB002E4C8C /* CustomInteractiveTransition.swift in Sources */,
+				95A420E525F21529002A95CA /* LentaTextModel.swift in Sources */,
 				9557480724BA4478002E4C8C /* PreviewImageViewController.swift in Sources */,
 				953BE03924BCE63C0043C0CD /* PreviewImage.swift in Sources */,
+				95A420E925F216F4002A95CA /* LentaTextModelFactory.swift in Sources */,
 				95D4359C25EE127300139BD2 /* AlbomSize.swift in Sources */,
 				95B24C0825CD3296009EA000 /* GalleryCollectionViewCell.swift in Sources */,
 				957C836625B027CD00EC75A9 /* PostCell.swift in Sources */,
 				95706A5425AD814300340E20 /* TextTableViewCell.swift in Sources */,
 				95B5157324CC095400C4AE07 /* Session.swift in Sources */,
 				95B24C0325CD317D009EA000 /* GalleryCollectionViewController.swift in Sources */,
+				95A420BF25F0A837002A95CA /* LentaHeaderModelFactory.swift in Sources */,
 				95411F6324ACDE1C009F50A7 /* ResponsePost.swift in Sources */,
 				95DB2D8125D1A8C7000FD046 /* AlbumNode.swift in Sources */,
 				95D435D325EE242B00139BD2 /* UserAdapter.swift in Sources */,
+				95A420BC25F0A824002A95CA /* LentaHeaderModel.swift in Sources */,
 				95776798249F50FE00F12F34 /* UserRealm.swift in Sources */,
 				956A1E9A25EE3A6000F54327 /* Group.swift in Sources */,
 				95D435A425EE153000139BD2 /* CaruselControl.swift in Sources */,
 				95A70DF124D6A414000F8A95 /* Response.swift in Sources */,
+				95A420FB25F223B8002A95CA /* PostModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

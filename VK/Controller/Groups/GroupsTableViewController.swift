@@ -7,19 +7,34 @@
 //
 
 import UIKit
-import RealmSwift
 
 class GroupsTableViewController: UITableViewController {
     
     let groupAdapter = GroupAdapter()
     lazy var photoService = PhotoService(container: tableView)
     
+    private let viewModelFactory = GroupsViewModelFactory()
+    private var viewModels = [GroupViewModel]() {
+        willSet {
+            filterGroupsAdapter.update(with: newValue)
+        }
+    }
+    private var filterGroupsAdapter = FilterGroupsAdapter()
+    weak var filterDelegate: FilterGroupsAdapterDelegate?
+    
     @IBOutlet weak var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
         loadPullRefresh()
         load()
+    }
+    
+    //MARK: - Preapre
+    
+    private func configure() {
+        self.filterDelegate = self.filterGroupsAdapter
     }
     
     
@@ -33,31 +48,11 @@ class GroupsTableViewController: UITableViewController {
     
     @objc func load() {
         print(#function)
-        groupAdapter.getGroups() { [weak self] (groups, deleted, inserted, modificated) in
-            if deleted.isEmpty, inserted.isEmpty, modificated.isEmpty {
-                self?.groups = groups
-                self?.tableView.reloadData()
-                self?.refreshControl?.endRefreshing()
-            } else {
-                self?.tableView.beginUpdates()
-                self?.tableView.reloadRows(at: modificated.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-                self?.tableView.insertRows(at: inserted.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-                self?.tableView.deleteRows(at: deleted.map { IndexPath(row: $0, section: 0) }, with: .automatic)
-                self?.tableView.endUpdates()
-            }
-            
-        }
-    }
-    //MARK: - FilterGroups
-    
-    var groups: [Group] = []
-    var filteredGroups: [Group] = []
-    
-    var isFiltering: (Bool, String) = (false, "") {
-        didSet {
-            filteredGroups = isFiltering.0 ? groups.filter({ (group) -> Bool in
-                group.title.lowercased().contains(isFiltering.1.lowercased())
-                }) : []
+        groupAdapter.getGroups() { [weak self] (groups, _, _, _) in
+            guard let self = self else { return }
+            self.viewModels = self.viewModelFactory.constractViewModel(with: groups)
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
     }
      
@@ -66,13 +61,14 @@ class GroupsTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isFiltering.0 ? filteredGroups.count : groups.count
+        return filterGroupsAdapter.viewModels().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupTableViewCell
-        let group = isFiltering.0 ? filteredGroups[indexPath.row] : groups[indexPath.row]
-        cell.set(group: group, photoService: photoService, indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: GroupTableViewCell.identifier, for: indexPath) as! GroupTableViewCell
+        let group = filterGroupsAdapter.viewModels()[indexPath.row]
+        let avatar = photoService.photo(atIndexpath: indexPath, byUrl: group.avatar)
+        cell.configure(with: group, with: avatar)
         return cell
     }
     
@@ -80,35 +76,22 @@ class GroupsTableViewController: UITableViewController {
     @IBAction func unwindToGroups(segue: UIStoryboardSegue) {
         let globalGroups = segue.source as! GlobalGroupsTableViewController
         guard let indexPath = globalGroups.tableView.indexPathForSelectedRow else { return }
-        let group = globalGroups.groups[indexPath.row]
+        let viewModel = globalGroups.viewModels[indexPath.row]
+        let group = viewModelFactory.getGroup(for: viewModel)
         let groupRealm = groupAdapter.getGroupRealm(from: group)
-        //To Realm
-        DispatchQueue.main.async {
-            do {
-                let realm = try Realm()
-                try realm.write {
-                    realm.add(groupRealm, update: .modified)
-                }
-            } catch {
-                print(error)
-            }
-        }
+        RealmService.shared.addObject(groupRealm)
     }
 }
 
 extension GroupsTableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if !searchText.isEmpty {
-            isFiltering = (true, searchText)
-        } else {
-            isFiltering.0 = false
-        }
+        filterDelegate?.search(for: searchText)
         tableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isFiltering.0 = false
+        filterDelegate?.cancelSearch()
         self.view.endEditing(true)
         tableView.reloadData()
     }

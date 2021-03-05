@@ -48,7 +48,7 @@ class UserAdapter: UserAdapterProtocol {
         }
     }
     
-    private func getUser(from realmUser: UserRealm) -> User {
+    func getUser(from realmUser: UserRealm) -> User {
         return User(id: realmUser.id,
                     name: realmUser.name,
                     lastname: realmUser.lastname,

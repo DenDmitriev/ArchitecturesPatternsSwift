@@ -10,22 +10,16 @@ import UIKit
 
 class FriendTableViewCell: UITableViewCell {
     
+    static let identifier = "cell"
+    
     var id: Int!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImage: AvatarView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func configure(with user: FriendsViewModel, avatar: UIImage?) {
+        self.id = user.id
+        self.nameLabel.text = user.name
+        self.avatarImage.image = avatar
     }
-    
-    func set(user: User) {
-        id = user.id
-        nameLabel.text = user.name + " " + user.lastname
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
 }

@@ -30,10 +30,11 @@ class PhotoTableViewCell: UITableViewCell, PostSet {
 
     //MARK: - Setup cell
     
-    func set(post: Post) {
-        guard let photos = post.photos else { return }
-        photoMode = post.photoMode ?? .empty
-        self.photos = photos
+    func configure(with viewModel: LentaModel?) {
+        guard let photoModel = viewModel as? LentaPhotoModel else { return }
+        self.photos = photoModel.photos
+        photoMode = photoModel.photoMode
+        
     }
     
     private func reset() {

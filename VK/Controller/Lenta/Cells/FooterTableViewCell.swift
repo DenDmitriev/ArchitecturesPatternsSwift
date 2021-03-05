@@ -15,32 +15,22 @@ class FooterTableViewCell: UITableViewCell, PostSet {
     @IBOutlet weak var repostControl: LikeButton!
     @IBOutlet weak var viewControl: LikeButton!
     
-    
-    func set(post: Post) {
-        configButton(button: likeControl, count: post.likes?.count)
-        configButton(button: commentControl, count: post.comments?.count)
-        configButton(button: repostControl, count: post.reposts?.count)
-        configButton(button: viewControl, count: post.views?.count)
+    func configure(with viewModel: LentaModel?) {
+        guard let footerModel = viewModel as? LentaFooterModel else { return }
+        configButton(button: likeControl, count: footerModel.likes)
+        configButton(button: commentControl, count: footerModel.comments)
+        configButton(button: repostControl, count: footerModel.reposts)
+        configButton(button: viewControl, count: footerModel.views)
     }
+
     
-    func configButton(button: LikeButton, count: Int?) {
+    private func configButton(button: LikeButton, count: Int?) {
         guard let number = count else {
             button.isHidden = true
             return
         }
         button.isHidden = false
         button.count = number
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

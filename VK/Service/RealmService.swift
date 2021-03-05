@@ -21,6 +21,30 @@ class RealmService {
                     realm.add(array, update: .modified)
                 }
             } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getObject<T: Object>(with type: T.Type, for primaryKey: Int) -> T? {
+        do {
+            let realm = try Realm()
+            let object = realm.object(ofType: T.self, forPrimaryKey: primaryKey)
+            return object
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+    
+    func addObject<T: Object>(_ object: T) {
+        DispatchQueue.main.async {
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(object, update: .modified)
+                }
+            } catch {
                 print(error)
             }
         }

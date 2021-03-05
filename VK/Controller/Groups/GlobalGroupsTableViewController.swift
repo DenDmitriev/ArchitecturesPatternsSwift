@@ -12,7 +12,11 @@ class GlobalGroupsTableViewController: UITableViewController {
     
     lazy var photoService = PhotoService(container: tableView)
     let groupAdapter = GroupAdapter()
-    var groups: [Group] = []
+    
+    private let viewModelFactory = GroupsViewModelFactory()
+    var viewModels = [GroupViewModel]()
+    
+    var isFiltering: Bool = false
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -22,14 +26,12 @@ class GlobalGroupsTableViewController: UITableViewController {
     
     //MARK: - Data loading
     
-    var filteredGroups: [GroupRealm] = []
-    var isFiltering: Bool = false
-    
     @objc func refresh(text: String) {
         print(#function)
         groupAdapter.getGlobalGroups(text: text) { [weak self] groups in
-            self?.groups = groups
-            self?.tableView.reloadData()
+            guard let self = self else { return }
+            self.viewModels = self.viewModelFactory.constractViewModel(with: groups)
+            self.tableView.reloadData()
         }
     }
 
@@ -37,13 +39,14 @@ class GlobalGroupsTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        return viewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GroupTableViewCell
-        let currentGroups = groups
-        cell.set(group: currentGroups[indexPath.row], photoService: photoService, indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: GroupTableViewCell.identifier, for: indexPath) as! GroupTableViewCell
+        let group = viewModels[indexPath.row]
+        let avatar = photoService.photo(atIndexpath: indexPath, byUrl: group.avatar)
+        cell.configure(with: group, with: avatar)
         return cell
     }
   
