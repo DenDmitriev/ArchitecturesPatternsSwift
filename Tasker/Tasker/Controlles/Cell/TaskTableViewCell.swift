@@ -45,13 +45,24 @@ class TaskTableViewCell: UITableViewCell {
         case 0:
             subTasksCountLabel.text = "Contains no tasks"
         default:
-            subTasksCountLabel.text = "Contains \(task.tasks.count) tasks"
+            let count = countTasks(task: task)
+            subTasksCountLabel.text = "Contains \(count) tasks"
         }
     }
     
     private func save() {
         guard let task = task, let indexPath = indexPath else { return }
         delegate?.observe(task: task, at: indexPath)
+    }
+    
+    //Рекурсивная функция
+    private func countTasks(task: CompositeTask) -> Int {
+        var count = task.tasks.count
+        for task in task.tasks {
+            guard let compositeTask = task as? CompositeTask else { continue }
+            count += countTasks(task: compositeTask)
+        }
+        return count
     }
     
     
