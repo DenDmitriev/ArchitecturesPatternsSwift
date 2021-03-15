@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TextTableViewCell" customModule="VK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="431"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="413" height="431"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="axr-G1-bbY">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="431"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZR-NV-Iyf">
+                                <rect key="frame" x="0.0" y="0.0" width="413" height="398"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Z47-T0-JYK">
+                                        <rect key="frame" x="4" y="0.0" width="405" height="398"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Z47-T0-JYK" secondAttribute="bottom" id="DXV-na-7cz"/>
+                                    <constraint firstItem="Z47-T0-JYK" firstAttribute="leading" secondItem="bZR-NV-Iyf" secondAttribute="leading" constant="4" id="GIR-t8-ZHh"/>
+                                    <constraint firstItem="Z47-T0-JYK" firstAttribute="top" secondItem="bZR-NV-Iyf" secondAttribute="top" id="NNC-ct-BpG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z47-T0-JYK" secondAttribute="trailing" constant="4" id="hjV-do-6FK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8R-qV-RJx">
+                                <rect key="frame" x="0.0" y="398" width="413" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaM-kd-BQi">
+                                        <rect key="frame" x="12" y="0.0" width="401" height="33"/>
+                                        <state key="normal" title="Показать...   "/>
+                                        <connections>
+                                            <action selector="showMoreAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Pye-Zt-ZTt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SaM-kd-BQi" firstAttribute="leading" secondItem="g8R-qV-RJx" secondAttribute="leading" constant="12" id="A4a-cB-oMp"/>
+                                    <constraint firstAttribute="height" constant="33" id="Gy7-gK-L1e"/>
+                                    <constraint firstAttribute="bottom" secondItem="SaM-kd-BQi" secondAttribute="bottom" id="eA5-IK-0XK"/>
+                                    <constraint firstAttribute="trailing" secondItem="SaM-kd-BQi" secondAttribute="trailing" id="edE-A1-GcS"/>
+                                    <constraint firstItem="SaM-kd-BQi" firstAttribute="top" secondItem="g8R-qV-RJx" secondAttribute="top" id="wDI-Rh-HaR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="axr-G1-bbY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Dv6-49-3ix"/>
+                    <constraint firstAttribute="trailing" secondItem="axr-G1-bbY" secondAttribute="trailing" id="GfM-k2-oDX"/>
+                    <constraint firstItem="axr-G1-bbY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="M6T-BD-dgD"/>
+                    <constraint firstAttribute="bottom" secondItem="axr-G1-bbY" secondAttribute="bottom" id="fRq-xn-sAY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="postTextView" destination="Z47-T0-JYK" id="KYQ-xw-6Mm"/>
+                <outlet property="showMoreButton" destination="SaM-kd-BQi" id="Ri6-pQ-qnU"/>
+                <outlet property="showMoreView" destination="g8R-qV-RJx" id="GnA-dl-piz"/>
+            </connections>
+            <point key="canvasLocation" x="-100.72463768115942" y="83.370535714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
