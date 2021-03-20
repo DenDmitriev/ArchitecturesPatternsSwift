@@ -57,7 +57,7 @@ class PlaybackViewModel: PlaybackViewModelOutput {
         return currentTime
     }
     
-    var timers = [Timer?]()
+    private var timers = [Timer?]()
     
     init(music url: String, progress: Double, timecode: String, onProgressViewChanged: ((Double) -> Void)?, timecodeChanged: ((String) -> Void)?, playbackChanged: ((Bool) -> Void)?, trackAvailable: ((Bool, String?) -> Void)?) {
         self.musicUrl = url
