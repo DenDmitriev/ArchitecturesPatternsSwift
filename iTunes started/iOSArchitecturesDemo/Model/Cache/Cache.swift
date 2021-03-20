@@ -23,11 +23,17 @@ protocol CacheSongInterface {
     func getSongs(by query: String) -> [ITunesSong]?
 }
 
+protocol CacheMusicInterface {
+    func addMusic(on url: String?, with data: Data)
+    func getMusic(by url: String?) -> Data?
+}
+
 final class Cache {
     
     static let shared = Cache()
     
     private var images = [String : UIImage]()
+    private var music = [String : Data]()
     private var apps = [String : [ITunesApp]]()
     private var songs = [String : [ITunesSong]]()
     
@@ -86,5 +92,26 @@ extension Cache: CacheSongInterface {
         guard let song = songs[query] else { return nil }
         print("get song from cache")
         return song
+    }
+}
+
+
+extension Cache: CacheMusicInterface {
+    func addMusic(on url: String?, with data: Data) {
+        guard let url = url else { return }
+        
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
+            self.music[url] = data
+        }
+    }
+    
+    func getMusic(by url: String?) -> Data? {
+        guard
+            let url = url,
+            let music = music[url]
+        else { return nil }
+        print("get music from cache")
+        return music
     }
 }

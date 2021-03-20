@@ -13,7 +13,16 @@ typealias DownloadMusicCompletion = (_ music: Data?, _ error: Error?) -> Void
 
 final class MusicDownloader {
     
+    let cache: CacheMusicInterface = Cache.shared
+    
     public func getMusic(from url: String, completion: @escaping DownloadMusicCompletion) {
+        
+        if let music = self.cache.getMusic(by: url) {
+            completion(music, nil)
+            
+            return
+        }
+        
         Alamofire.request(url).response { dataResponse in
             if let error = dataResponse.error {
                 completion(nil, error)
@@ -26,6 +35,8 @@ final class MusicDownloader {
                 completion(nil, error)
                 return
             }
+            
+            self.cache.addMusic(on: url, with: musicData)
             
             completion(musicData, nil)
             
