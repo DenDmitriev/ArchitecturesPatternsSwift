@@ -26,14 +26,14 @@ class PlaybackViewModel: PlaybackViewModelOutput {
     
     private var audioPlayer: AudioPlayer?
     
+    private let musicDownloader = MusicDownloader()
+    
     private var musicUrl: String
     
     var playbackChanged: ((Bool) -> Void)?
     var timecodeChanged: ((String) -> Void)?
     var onProgressViewChanged: ((Double) -> Void)?
     var trackAvailable: ((Bool, String?) -> Void)?
-    
-    private let musicDownloader = MusicDownloader()
     
     private var progress: Double {
         didSet {
@@ -45,16 +45,6 @@ class PlaybackViewModel: PlaybackViewModelOutput {
         didSet {
             timecodeChanged?(timecode)
         }
-    }
-    
-    private lazy var duration: TimeInterval = {
-        guard let duration = audioPlayer?.player?.duration else { return 0 }
-        return duration
-    }()
-    
-    private var currentTime: TimeInterval {
-        guard let currentTime = audioPlayer?.player?.currentTime else { return 0 }
-        return currentTime
     }
     
     private var timers = [Timer?]()
@@ -83,12 +73,22 @@ class PlaybackViewModel: PlaybackViewModelOutput {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.createPlayer(with: data)
-                self.trackAvailable?(true, self.getTimecode(from: self.duration))
+                self.trackAvailable?(true, self.duration.timecode())
             }
         }
     }
     
     //MARK: - AudioPlayer
+    
+    private lazy var duration: TimeInterval = {
+        guard let duration = audioPlayer?.player?.duration else { return 0 }
+        return duration
+    }()
+    
+    private var currentTime: TimeInterval {
+        guard let currentTime = audioPlayer?.player?.currentTime else { return 0 }
+        return currentTime
+    }
     
     private func createPlayer(with data: Data?) {
         guard let music = data else { return }
@@ -118,7 +118,7 @@ class PlaybackViewModel: PlaybackViewModelOutput {
             
             let timerTimecode = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
                 guard let self = self else { return }
-                self.timecode = self.getTimecode(from: timer.timeInterval + self.currentTime)
+                self.timecode = (timer.timeInterval + self.currentTime).timecode()
             }
             
             timers.append(contentsOf: [timerProgress, timerTimecode])
@@ -126,7 +126,7 @@ class PlaybackViewModel: PlaybackViewModelOutput {
             invalidateTimers()
             
             self.progress = currentTime / duration
-            self.timecode = getTimecode(from: currentTime)
+            self.timecode = currentTime.timecode()
         }
     }
     
@@ -135,14 +135,6 @@ class PlaybackViewModel: PlaybackViewModelOutput {
     private func invalidateTimers() {
         timers.forEach { $0?.invalidate() }
         timers.removeAll()
-    }
-    
-    private func getTimecode(from timeInterval: TimeInterval) -> String {
-        let durationInSeconds = Int(timeInterval)
-        //print(durationInSeconds)
-        let minutes = durationInSeconds / 60
-        let seconds = durationInSeconds - minutes * 60
-        return String(format: "%02d:%02d", minutes,seconds) as String
     }
 }
 

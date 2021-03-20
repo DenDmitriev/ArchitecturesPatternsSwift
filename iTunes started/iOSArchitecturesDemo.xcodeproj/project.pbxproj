@@ -17,6 +17,7 @@
 		952E1FE0260538A7008B0FA1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E1FDF260538A7008B0FA1 /* Cache.swift */; };
 		952E1FE626054E17008B0FA1 /* SearchAppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E1FE526054E17008B0FA1 /* SearchAppInteractor.swift */; };
 		952E1FEA26054EC2008B0FA1 /* SearchAppRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E1FE926054EC2008B0FA1 /* SearchAppRouterInput.swift */; };
+		954465B52605CCE5001A688F /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954465B42605CCE5001A688F /* TimeIntervalExtension.swift */; };
 		9568E102260394BD00C95505 /* SongCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568E101260394BD00C95505 /* SongCoverViewController.swift */; };
 		9568E105260395B900C95505 /* SongCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568E104260395B900C95505 /* SongCoverView.swift */; };
 		9568E10C260499C300C95505 /* SearchMusicRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9568E10B260499C300C95505 /* SearchMusicRouter.swift */; };
@@ -77,6 +78,7 @@
 		952E1FDF260538A7008B0FA1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		952E1FE526054E17008B0FA1 /* SearchAppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppInteractor.swift; sourceTree = "<group>"; };
 		952E1FE926054EC2008B0FA1 /* SearchAppRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppRouterInput.swift; sourceTree = "<group>"; };
+		954465B42605CCE5001A688F /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		9568E101260394BD00C95505 /* SongCoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCoverViewController.swift; sourceTree = "<group>"; };
 		9568E104260395B900C95505 /* SongCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCoverView.swift; sourceTree = "<group>"; };
 		9568E10B260499C300C95505 /* SearchMusicRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicRouter.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				9568E1252604E6E900C95505 /* PlaybackViewModel.swift */,
+				954465B42605CCE5001A688F /* TimeIntervalExtension.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				E0E1D2932034A3350011E01A /* AppDelegate.swift in Sources */,
 				E0E1D384203AE3620011E01A /* AppStartManager.swift in Sources */,
 				9568E11B2604A21300C95505 /* SongControlView.swift in Sources */,
+				954465B52605CCE5001A688F /* TimeIntervalExtension.swift in Sources */,
 				F8114FC122A3E5EE00102830 /* AppCellModel.swift in Sources */,
 				956AEA7026037DD400612261 /* SongViewController.swift in Sources */,
 				9581FCC02603484900FEFD9D /* PreviewScreensPageViewController.swift in Sources */,

@@ -81,7 +81,7 @@ final class AppDetailViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             scrollView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -142,7 +142,7 @@ final class AppDetailViewController: UIViewController {
             previewScreensViewController.view.topAnchor.constraint(equalTo: releaseNotesViewController.view.bottomAnchor, constant: 12),
             previewScreensViewController.view.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             previewScreensViewController.view.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            previewScreensViewController.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            previewScreensViewController.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
         ])
     }
 }
