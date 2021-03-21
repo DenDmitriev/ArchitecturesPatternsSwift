@@ -36,10 +36,15 @@ class SongControlViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.sync()
+    }
+    
     //MARK: - Public
     
     func close() {
-        viewModel?.close()
+        //viewModel?.stop()
     }
     
     //MARK: - Private methods
@@ -49,15 +54,19 @@ class SongControlViewController: UIViewController {
         songControlView.viewController = self
         
         //from controller to view model
-        viewModel = PlaybackViewModel(music: song.previewUrl ?? "", progress: 0, timecode: "00:00", onProgressViewChanged: { [weak self] progress in
-            self?.songControlView.progressView.setProgress(Float(progress), animated: false)
-        }, timecodeChanged: { [weak self] timecode in
-            self?.songControlView.updateTimecode(timecode: timecode)
-        }, playbackChanged: { [weak self] isPlaying in
-            self?.songControlView.updatePlayButton(isPlaying: isPlaying)
-        }, trackAvailable: { [weak self] (isAvailable, duration)  in
-            self?.songControlView.trackAvailable(isAvailable: isAvailable, with: duration)
-        })
+        viewModel = PlaybackViewModel(
+            music: song.previewUrl ?? "",
+            progress: 0,
+            timecode: "00:00",
+            onProgressViewChanged: { [weak self] progress in
+                self?.songControlView.progressView.setProgress(Float(progress), animated: false)
+            }, timecodeChanged: { [weak self] timecode in
+                self?.songControlView.updateTimecode(timecode: timecode)
+            }, playbackChanged: { [weak self] isPlaying in
+                self?.songControlView.updatePlayButton(isPlaying: isPlaying)
+            }, trackAvailable: { [weak self] (isAvailable, duration)  in
+                self?.songControlView.trackAvailable(isAvailable: isAvailable, with: duration)
+            })
     }
     
     

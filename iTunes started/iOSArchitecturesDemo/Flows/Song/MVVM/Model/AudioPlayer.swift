@@ -14,21 +14,30 @@ protocol AudioPlayerOutput {
 
 class AudioPlayer: NSObject {
     
+    static let shared = AudioPlayer()
+    
     var player: AVAudioPlayer?
+    var url: String?
     
     private var viewModel: AudioPlayerOutput?
     
-    init(data: Data, viewModel: AudioPlayerOutput) {
-        super.init()
+    private override init() {
+        super.init()   
+    }
+    
+    func music(from data: Data, by url: String, with viewModel: AudioPlayerOutput) {
+        
+        guard player?.data != data else { return }
+        
         do {
             player = try AVAudioPlayer(data: data)
             player?.numberOfLoops = 0
             player?.delegate = self
             self.viewModel = viewModel
+            self.url = url
         } catch {
             print(error.localizedDescription)
         }
-            
     }
     
 }

@@ -46,11 +46,13 @@ class SongTitleView: UIView {
         self.addSubview(trackLabel)
         
         NSLayoutConstraint.activate([
-            artistLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             artistLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
-            
-            trackLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            artistLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+            artistLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
+        
             trackLabel.topAnchor.constraint(equalTo: artistLabel.bottomAnchor, constant: 8),
+            trackLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+            trackLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
             trackLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }

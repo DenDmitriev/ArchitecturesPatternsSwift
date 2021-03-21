@@ -12,7 +12,7 @@ import AVFoundation
 protocol PlaybackViewModelInput {
     func play()
     func stop()
-    func close()
+    func sync()
 }
 
 protocol PlaybackViewModelOutput {
@@ -24,7 +24,7 @@ protocol PlaybackViewModelOutput {
 
 class PlaybackViewModel: PlaybackViewModelOutput {
     
-    private var audioPlayer: AudioPlayer?
+    private var audioPlayer = AudioPlayer.shared
     
     private let musicDownloader = MusicDownloader()
     
@@ -71,8 +71,12 @@ class PlaybackViewModel: PlaybackViewModelOutput {
             guard let self = self else { return }
             
             DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.createPlayer(with: data)
+                guard
+                    let self = self,
+                    let data = data
+                else { return }
+                
+                self.audioPlayer.music(from: data, by: self.musicUrl, with: self)
                 self.trackAvailable?(true, self.duration.timecode())
             }
         }
@@ -81,18 +85,13 @@ class PlaybackViewModel: PlaybackViewModelOutput {
     //MARK: - AudioPlayer
     
     private lazy var duration: TimeInterval = {
-        guard let duration = audioPlayer?.player?.duration else { return 0 }
+        guard let duration = audioPlayer.player?.duration else { return 0 }
         return duration
     }()
     
     private var currentTime: TimeInterval {
-        guard let currentTime = audioPlayer?.player?.currentTime else { return 0 }
+        guard let currentTime = audioPlayer.player?.currentTime else { return 0 }
         return currentTime
-    }
-    
-    private func createPlayer(with data: Data?) {
-        guard let music = data else { return }
-        audioPlayer = AudioPlayer(data: music, viewModel: self)
     }
     
     //MARK: - UI Methods
@@ -103,17 +102,21 @@ class PlaybackViewModel: PlaybackViewModelOutput {
     }
     
     private func updateButtons() {
-        playbackChanged?(audioPlayer?.player?.isPlaying ?? false)
+        playbackChanged?(audioPlayer.player?.isPlaying ?? false)
     }
     
     private func updateProgress() {
-        guard let isPlaying = audioPlayer?.player?.isPlaying  else { return }
+        guard let isPlaying = audioPlayer.player?.isPlaying  else { return }
         if isPlaying {
             invalidateTimers()
             
             let timerProgress = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
                 guard let self = self else { return }
-                self.progress = self.currentTime / self.duration
+                if self.duration == 0 {
+                    self.progress = 0
+                } else {
+                    self.progress = self.currentTime / self.duration
+                }
             }
             
             let timerTimecode = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
@@ -140,31 +143,31 @@ class PlaybackViewModel: PlaybackViewModelOutput {
 
 extension PlaybackViewModel: PlaybackViewModelInput {
     
-    func close() {
-        //print(#function)
-        stop()
-        audioPlayer = nil
+    func sync() {
+        guard let musicUrl = audioPlayer.url else { return }
+        
+        if musicUrl == self.musicUrl {
+            updateUI()
+        }
     }
     
     
     func play() {
-        //print(#function)
-        guard let isPlaying = audioPlayer?.player?.isPlaying else { return }
+        guard let isPlaying = audioPlayer.player?.isPlaying else { return }
         
         switch isPlaying {
         case false:
-            audioPlayer?.player?.play()
+            audioPlayer.player?.play()
         case true:
-            audioPlayer?.player?.pause()
+            audioPlayer.player?.pause()
         }
         
         updateUI()
     }
     
     func stop() {
-        //print(#function)
-        audioPlayer?.player?.stop()
-        audioPlayer?.player?.currentTime = 0
+        audioPlayer.player?.stop()
+        audioPlayer.player?.currentTime = 0
 
         updateUI()
     }
